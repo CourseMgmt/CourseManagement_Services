@@ -1,0 +1,16 @@
+E:\Project Files\Course Management\Course Management Services\courseManagement_DBLayer\bin\Debug\courseManagement_DBLayer.dll.config
+E:\Project Files\Course Management\Course Management Services\courseManagement_DBLayer\bin\Debug\courseManagement_DBLayer.dll
+E:\Project Files\Course Management\Course Management Services\courseManagement_DBLayer\bin\Debug\courseManagement_DBLayer.pdb
+E:\Project Files\Course Management\Course Management Services\courseManagement_DBLayer\bin\Debug\courseManagement_Logs.dll
+E:\Project Files\Course Management\Course Management Services\courseManagement_DBLayer\bin\Debug\courseManagement_ServiceModel.dll
+E:\Project Files\Course Management\Course Management Services\courseManagement_DBLayer\bin\Debug\EntityFramework.dll
+E:\Project Files\Course Management\Course Management Services\courseManagement_DBLayer\bin\Debug\EntityFramework.SqlServer.dll
+E:\Project Files\Course Management\Course Management Services\courseManagement_DBLayer\bin\Debug\courseManagement_Logs.pdb
+E:\Project Files\Course Management\Course Management Services\courseManagement_DBLayer\bin\Debug\courseManagement_ServiceModel.pdb
+E:\Project Files\Course Management\Course Management Services\courseManagement_DBLayer\bin\Debug\EntityFramework.xml
+E:\Project Files\Course Management\Course Management Services\courseManagement_DBLayer\bin\Debug\EntityFramework.SqlServer.xml
+E:\Project Files\Course Management\Course Management Services\courseManagement_DBLayer\obj\Debug\courseManagement_DBLayer.csprojAssemblyReference.cache
+E:\Project Files\Course Management\Course Management Services\courseManagement_DBLayer\obj\Debug\courseManagement_DBLayer.csproj.CoreCompileInputs.cache
+E:\Project Files\Course Management\Course Management Services\courseManagement_DBLayer\obj\Debug\courseManagement_DBLayer.csproj.CopyComplete
+E:\Project Files\Course Management\Course Management Services\courseManagement_DBLayer\obj\Debug\courseManagement_DBLayer.dll
+E:\Project Files\Course Management\Course Management Services\courseManagement_DBLayer\obj\Debug\courseManagement_DBLayer.pdb

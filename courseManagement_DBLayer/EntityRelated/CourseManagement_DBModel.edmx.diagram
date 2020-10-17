@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d8c68b12c0a04f25a6fdacc7e359ec9c" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Fee_Payment_Info" Width="1.5" PointX="3" PointY="53.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Course_Detail" Width="1.5" PointX="6" PointY="53.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Course_Video" Width="1.5" PointX="11.25" PointY="56.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Emp_Attempted_Stud" Width="1.5" PointX="5.25" PointY="71.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Emp_Info" Width="1.5" PointX="3" PointY="47.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Emp_Job_Ad" Width="1.5" PointX="3" PointY="59.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Emp_Job_Ad_Skills" Width="1.5" PointX="8.5" PointY="51.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Login" Width="1.5" PointX="0.75" PointY="48.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Master" Width="1.5" PointX="3" PointY="77.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Sub_Master" Width="1.5" PointX="5.25" PointY="60.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Stud_Assignment_Answers" Width="1.5" PointX="13.5" PointY="76.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Stud_Assignment_Info" Width="1.5" PointX="13.5" PointY="66.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Stud_Assignment_Project_Answers" Width="1.5" PointX="19.5" PointY="71.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Stud_Certificate" Width="1.5" PointX="8.25" PointY="72.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Stud_Course_Regd" Width="1.5" PointX="11.25" PointY="68.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Stud_Favourites_Vd" Width="1.5" PointX="13.5" PointY="71.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Stud_Job_Exp_Info" Width="1.5" PointX="8.25" PointY="67.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Stud_Notes" Width="1.5" PointX="16.5" PointY="68.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Stud_Personal_Info" Width="1.5" PointX="3" PointY="89.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Stud_Resume" Width="1.5" PointX="5.25" PointY="92.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Stud_Skill_Set" Width="1.5" PointX="7.5" PointY="77.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Stud_Viewed_Vd" Width="1.5" PointX="16.5" PointY="73.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Trnr_Assignment_Master" Width="1.5" PointX="11.25" PointY="73.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Trnr_Assignment_Questions" Width="1.5" PointX="16.5" PointY="61.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Trnr_Job_Exp_Info" Width="1.5" PointX="15.75" PointY="51.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Trnr_Personal_Info" Width="1.5" PointX="13.5" PointY="56" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Trnr_Skill_Set" Width="1.5" PointX="18.75" PointY="57" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Trnr_Video_Upload" Width="1.5" PointX="16.5" PointY="56.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourseManagementModel.tbl_Adm_Info" Width="1.5" PointX="8.5" PointY="56.5" IsExpanded="true" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Fee_Payment_Info_tbl_Course_Detail" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Fee_Payment_Info_tbl_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Fee_Payment_Info_tbl_Login1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Fee_Payment_Info_tbl_Login2" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Course_Detail_tbl_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Course_Detail_tbl_Login1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Course_Detail_tbl_Sub_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Course_Detail_tbl_Sub_Master1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Course_Detail_tbl_Sub_Master2" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Course_Video_tbl_Course_Detail" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Course_Regd_tbl_Course_Detail" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Favourites_Vd_tbl_Course_Detail" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Notes_tbl_Course_Detail" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Assignment_Master_tbl_Course_Detail" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Video_Upload_tbl_Course_Detail" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Course_Video_tbl_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Course_Video_tbl_Login1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Course_Video_tbl_Sub_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Favourites_Vd_tbl_Course_Video" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Notes_tbl_Course_Video" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Viewed_Vd_tbl_Course_Video" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Video_Upload_tbl_Course_Video" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Emp_Attempted_Stud_tbl_Emp_Job_Ad" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Emp_Attempted_Stud_tbl_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Emp_Attempted_Stud_tbl_Login1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Emp_Attempted_Stud_tbl_Stud_Personal_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Emp_Attempted_Stud_tbl_Sub_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Emp_Info_tbl_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Emp_Info_tbl_Login1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Emp_Info_tbl_Login2" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Emp_Info_tbl_Sub_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Emp_Info_tbl_Sub_Master1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Emp_Job_Ad_Skills_tbl_Emp_Job_Ad" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Emp_Job_Ad_tbl_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Emp_Job_Ad_tbl_Login1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Emp_Job_Ad_tbl_Login2" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Emp_Job_Ad_tbl_Sub_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Emp_Job_Ad_tbl_Sub_Master1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Emp_Job_Ad_Skills_tbl_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Emp_Job_Ad_Skills_tbl_Login1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Emp_Job_Ad_Skills_tbl_Sub_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Adm_Info_tbl_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Adm_Info_tbl_Login1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Adm_Info_tbl_Login2" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Master_tbl_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Master_tbl_Login1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Assignment_Answers_tbl_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Assignment_Answers_tbl_Login1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Assignment_Info_tbl_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Assignment_Info_tbl_Login1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Assignment_Project_Answers_tbl_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Assignment_Project_Answers_tbl_Login1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Certificate_tbl_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Certificate_tbl_Login1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Course_Regd_tbl_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Course_Regd_tbl_Login1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Favourites_Vd_tbl_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Favourites_Vd_tbl_Login1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Job_Exp_Info_tbl_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Job_Exp_Info_tbl_Login2" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Notes_tbl_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Notes_tbl_Login1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Personal_Info_tbl_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Personal_Info_tbl_Login1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Personal_Info_tbl_Login2" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Skill_Set_tbl_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Skill_Set_tbl_Login1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Viewed_Vd_tbl_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Viewed_Vd_tbl_Login1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Sub_Master_tbl_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Sub_Master_tbl_Login1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Assignment_Master_tbl_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Assignment_Master_tbl_Login1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Assignment_Questions_tbl_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Assignment_Questions_tbl_Login1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Job_Exp_Info_tbl_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Job_Exp_Info_tbl_Login1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Personal_Info_tbl_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Personal_Info_tbl_Login1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Personal_Info_tbl_Login2" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Skill_Set_tbl_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Skill_Set_tbl_Login1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Video_Upload_tbl_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Video_Upload_tbl_Login1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Video_Upload_tbl_Login2" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Sub_Master_tbl_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Adm_Info_tbl_Sub_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Adm_Info_tbl_Sub_Master1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Adm_Info_tbl_Sub_Master2" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Assignment_Info_tbl_Sub_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Skill_Set_tbl_Sub_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Skill_Set_tbl_Sub_Master1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Assignment_Master_tbl_Sub_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Assignment_Questions_tbl_Sub_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Personal_Info_tbl_Sub_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Personal_Info_tbl_Sub_Master1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Personal_Info_tbl_Sub_Master2" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Skill_Set_tbl_Sub_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Video_Upload_tbl_Sub_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Assignment_Answers_tbl_Stud_Personal_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Assignment_Answers_tbl_Trnr_Assignment_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Assignment_Answers_tbl_Trnr_Assignment_Questions" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Assignment_Info_tbl_Stud_Personal_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Assignment_Info_tbl_Trnr_Assignment_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Assignment_Project_Answers_tbl_Stud_Personal_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Assignment_Project_Answers_tbl_Trnr_Assignment_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Assignment_Project_Answers_tbl_Trnr_Assignment_Questions" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Certificate_tbl_Stud_Personal_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Course_Regd_tbl_Stud_Personal_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Favourites_Vd_tbl_Stud_Personal_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Job_Exp_Info_tbl_Stud_Personal_Info1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Notes_tbl_Stud_Personal_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Resume_tbl_Stud_Personal_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Resume_tbl_Stud_Personal_Info1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Resume_tbl_Stud_Resume" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Skill_Set_tbl_Stud_Personal_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Stud_Viewed_Vd_tbl_Stud_Personal_Info1" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Assignment_Master_tbl_Stud_Personal_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Assignment_Questions_tbl_Trnr_Assignment_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Job_Exp_Info_tbl_Trnr_Personal_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="CourseManagementModel.FK_tbl_Trnr_Skill_Set_tbl_Trnr_Personal_Info" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

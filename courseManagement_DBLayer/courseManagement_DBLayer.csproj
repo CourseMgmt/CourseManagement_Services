@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{31CACBA8-0433-49A9-901B-EEB84E23EF99}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>courseManagement_DBLayer</RootNamespace>
+    <AssemblyName>courseManagement_DBLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\courseManagement_Services\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\courseManagement_Services\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="EntityRelated\CourseManagement_DBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CourseManagement_DBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\CourseManagement_DBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\CourseManagement_DBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CourseManagement_DBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Adm_Info.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Course_Detail.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Course_Video.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Emp_Attempted_Stud.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Emp_Info.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Emp_Job_Ad.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Emp_Job_Ad_Skills.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Fee_Payment_Info.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Login.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Master.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Stud_Assignment_Answers.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Stud_Assignment_Info.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Stud_Assignment_Project_Answers.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Stud_Certificate.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Stud_Course_Regd.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Stud_Favourites_Vd.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Stud_Job_Exp_Info.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Stud_Notes.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Stud_Personal_Info.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Stud_Resume.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Stud_Skill_Set.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Stud_Viewed_Vd.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Sub_Master.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Trnr_Assignment_Master.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Trnr_Assignment_Questions.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Trnr_Job_Exp_Info.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Trnr_Personal_Info.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Trnr_Skill_Set.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityRelated\tbl_Trnr_Video_Upload.cs">
+      <DependentUpon>CourseManagement_DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="EntityRelated\CourseManagement_DBModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CourseManagement_DBModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="EntityRelated\CourseManagement_DBModel.edmx.diagram">
+      <DependentUpon>CourseManagement_DBModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EntityRelated\CourseManagement_DBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CourseManagement_DBModel.Context.cs</LastGenOutput>
+      <DependentUpon>CourseManagement_DBModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="EntityRelated\CourseManagement_DBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CourseManagement_DBModel.edmx</DependentUpon>
+      <LastGenOutput>CourseManagement_DBModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\courseManagement_Logs\courseManagement_Logs.csproj">
+      <Project>{32e563b4-0389-4f5a-8ca1-733978ade3a6}</Project>
+      <Name>courseManagement_Logs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\courseManagement_ServiceModel\courseManagement_ServiceModel.csproj">
+      <Project>{15fd9ffb-7d5a-435d-a200-c9a7d353d997}</Project>
+      <Name>courseManagement_ServiceModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

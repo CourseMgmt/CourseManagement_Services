@@ -1,0 +1,2489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CourseManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CourseManagement.admin.tbl_Adm_Info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_Adm_Info">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Login_Id" />
+      <PropertyRef Name="Last_Name" />
+      <PropertyRef Name="Alias" />
+      <PropertyRef Name="Gender" />
+      <PropertyRef Name="Date_Of_Birth" />
+      <PropertyRef Name="Mobile_Number" />
+      <PropertyRef Name="State" />
+      <PropertyRef Name="Country" />
+      <PropertyRef Name="Qualification" />
+      <PropertyRef Name="Is_Active" />
+      <PropertyRef Name="Created_By" />
+      <PropertyRef Name="Created_Date" />
+      <PropertyRef Name="Updated_Date" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login_Id" Type="bigint" Nullable="false" />
+    <Property Name="First_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Last_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Alias" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Gender" Type="bigint" Nullable="false" />
+    <Property Name="Date_Of_Birth" Type="datetime" Nullable="false" />
+    <Property Name="Mobile_Number" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="Address_Line_1" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address_Line_2" Type="nvarchar" MaxLength="100" />
+    <Property Name="Pin_Code" Type="nvarchar" MaxLength="10" />
+    <Property Name="State" Type="bigint" Nullable="false" />
+    <Property Name="Country" Type="bigint" Nullable="false" />
+    <Property Name="Qualification" Type="bigint" Nullable="false" />
+    <Property Name="Photo" Type="varchar" MaxLength="50" />
+    <Property Name="Secondary_Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Fee_Payment_Info">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login_Id" Type="bigint" Nullable="false" />
+    <Property Name="Course_Id" Type="bigint" Nullable="false" />
+    <Property Name="Course_Fee" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Paid_Fee" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Payment_Proof" Type="nvarchar" MaxLength="150" />
+    <Property Name="Transaction_Id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Is_Approved" Type="bit" Nullable="false" />
+    <Property Name="Approved_By" Type="bigint" Nullable="false" />
+    <Property Name="Remarks" Type="varchar(max)" />
+    <Property Name="Created_By" Type="bigint" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Course_Detail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Course_Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Course_Image" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Skill_Category" Type="bigint" Nullable="false" />
+    <Property Name="Course_Level" Type="bigint" Nullable="false" />
+    <Property Name="Course_Type" Type="bigint" Nullable="false" />
+    <Property Name="Course_Fee" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Course_Video">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Course_Id" Type="bigint" Nullable="false" />
+    <Property Name="Video_Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Display_Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="varchar(max)" Nullable="false" />
+    <Property Name="ThumbNail" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Video_Type" Type="bigint" Nullable="false" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Emp_Attempted_Stud">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Opening_Id" Type="bigint" Nullable="false" />
+    <Property Name="Student_Id" Type="bigint" Nullable="false" />
+    <Property Name="Selected_Status" Type="bigint" Nullable="false" />
+    <Property Name="Remarks" Type="varchar(max)" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Emp_Info">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login_Id" Type="bigint" Nullable="false" />
+    <Property Name="Company_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="First_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Last_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Alias" Type="varchar" MaxLength="20" />
+    <Property Name="Gender" Type="bigint" Nullable="false" />
+    <Property Name="Date_Of_Joining" Type="datetime" Nullable="false" />
+    <Property Name="Contact_Number" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Address_Line_1" Type="varchar" MaxLength="100" />
+    <Property Name="Address_Line_2" Type="varchar" MaxLength="100" />
+    <Property Name="Pin_Code" Type="varchar" MaxLength="10" />
+    <Property Name="State" Type="bigint" Nullable="false" />
+    <Property Name="Country" Type="bigint" Nullable="false" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Emp_Job_Ad">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Company_Id" Type="bigint" Nullable="false" />
+    <Property Name="Opening_Type" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="No_Of_Positions" Type="int" Nullable="false" />
+    <Property Name="Package_Range" Type="bigint" Nullable="false" />
+    <Property Name="Experience_Range" Type="bigint" Nullable="false" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Emp_Job_Ad_Skills">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Opening_Id" Type="bigint" Nullable="false" />
+    <Property Name="Skill_Id" Type="bigint" Nullable="false" />
+    <Property Name="Is_Mandatory" Type="bit" Nullable="false" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Login">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="User_ID" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Is_Email_Verified" Type="bit" Nullable="false" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" Nullable="false" />
+    <Property Name="Updated_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Master">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Master_Key" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Master_Value" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Sub_Master">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sub_Master_Key" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Sub_Master_Value" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Master_Id" Type="bigint" Nullable="false" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Stud_Assignment_Answers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Student_Id" Type="bigint" Nullable="false" />
+    <Property Name="Assignment_ID" Type="bigint" Nullable="false" />
+    <Property Name="Question_ID" Type="bigint" Nullable="false" />
+    <Property Name="Answer" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Stud_Assignment_Info">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Student_Id" Type="bigint" Nullable="false" />
+    <Property Name="Assignment_ID" Type="bigint" Nullable="false" />
+    <Property Name="Assignment_Status" Type="bigint" Nullable="false" />
+    <Property Name="Notes" Type="varchar(max)" Nullable="false" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Stud_Assignment_Project_Answers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Student_Id" Type="bigint" Nullable="false" />
+    <Property Name="Assignment_ID" Type="bigint" Nullable="false" />
+    <Property Name="Question_ID" Type="bigint" Nullable="false" />
+    <Property Name="Answer" Type="image" Nullable="false" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Stud_Certificate">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Student_Id" Type="bigint" Nullable="false" />
+    <Property Name="Certificate" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Stud_Course_Regd">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Student_Id" Type="bigint" Nullable="false" />
+    <Property Name="Course_Id" Type="bigint" Nullable="false" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Stud_Favourites_Vd">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Student_Id" Type="bigint" />
+    <Property Name="Course_Id" Type="bigint" />
+    <Property Name="Video_Id" Type="bigint" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Stud_Job_Exp_Info">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Student_Id" Type="bigint" Nullable="false" />
+    <Property Name="Company_Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="From_Date" Type="datetime" Nullable="false" />
+    <Property Name="To_Date" Type="datetime" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Stud_Notes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Student_Id" Type="bigint" Nullable="false" />
+    <Property Name="Video_Id" Type="bigint" Nullable="false" />
+    <Property Name="Course_Id" Type="bigint" Nullable="false" />
+    <Property Name="Notes" Type="varchar(max)" Nullable="false" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Stud_Personal_Info">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login_Id" Type="bigint" Nullable="false" />
+    <Property Name="First_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Last_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Alias" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Gender" Type="bigint" Nullable="false" />
+    <Property Name="Date_Of_Birth" Type="datetime" Nullable="false" />
+    <Property Name="Mobile_Number" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="Address_Line_1" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address_Line_2" Type="nvarchar" MaxLength="100" />
+    <Property Name="Pin_Code" Type="nvarchar" MaxLength="10" />
+    <Property Name="State" Type="bigint" Nullable="false" />
+    <Property Name="Country" Type="bigint" Nullable="false" />
+    <Property Name="Qualification" Type="bigint" Nullable="false" />
+    <Property Name="Photo" Type="varchar" MaxLength="50" />
+    <Property Name="Company_Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Secondary_Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Stud_Resume">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Student_Id" Type="bigint" />
+    <Property Name="Resume" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Is_Primary" Type="bit" Nullable="false" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Stud_Skill_Set">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Student_Id" Type="bigint" Nullable="false" />
+    <Property Name="Skill_Id" Type="bigint" Nullable="false" />
+    <Property Name="Experience" Type="bigint" Nullable="false" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Stud_Viewed_Vd">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="Student_Id" Type="bigint" Nullable="false" />
+    <Property Name="Video_Id" Type="bigint" Nullable="false" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Trnr_Assignment_Master">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Trainer_Id" Type="bigint" Nullable="false" />
+    <Property Name="Assignment_Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Assignment_Type" Type="bigint" Nullable="false" />
+    <Property Name="Course_Id" Type="bigint" Nullable="false" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Trnr_Assignment_Questions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Assignment_Id" Type="bigint" Nullable="false" />
+    <Property Name="Question_Type" Type="bigint" Nullable="false" />
+    <Property Name="Question_Name" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Option_A" Type="varchar" MaxLength="20" />
+    <Property Name="Option_B" Type="varchar" MaxLength="20" />
+    <Property Name="Option_C" Type="varchar" MaxLength="20" />
+    <Property Name="Option_D" Type="varchar" MaxLength="20" />
+    <Property Name="Answer" Type="varchar" MaxLength="10" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Trnr_Job_Exp_Info">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Trainer_Id" Type="bigint" Nullable="false" />
+    <Property Name="Company_Name" Type="varchar" MaxLength="200" />
+    <Property Name="From_Date" Type="datetime" Nullable="false" />
+    <Property Name="To_Date" Type="datetime" />
+    <Property Name="Skill_Set" Type="varchar" MaxLength="100" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Trnr_Personal_Info">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login_Id" Type="bigint" Nullable="false" />
+    <Property Name="First_Name" Type="varbinary" MaxLength="50" Nullable="false" />
+    <Property Name="Last_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Alias" Type="varchar" MaxLength="20" />
+    <Property Name="Gender" Type="bigint" Nullable="false" />
+    <Property Name="Date_Of_Birth" Type="datetime" Nullable="false" />
+    <Property Name="Mobile_Number" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Address_Line_1" Type="varchar" MaxLength="100" />
+    <Property Name="Address_Line_2" Type="varchar" MaxLength="100" />
+    <Property Name="Pin_Code" Type="varchar" MaxLength="10" />
+    <Property Name="State" Type="bigint" Nullable="false" />
+    <Property Name="Country" Type="bigint" Nullable="false" />
+    <Property Name="Qualification" Type="bigint" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar(max)" />
+    <Property Name="Secondary_Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="About_Me" Type="varchar(max)" />
+    <Property Name="Is_SME" Type="bit" Nullable="false" />
+    <Property Name="SME_Id" Type="bigint" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Trnr_Skill_Set">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Trainer_Id" Type="bigint" Nullable="false" />
+    <Property Name="Skill_Set_Id" Type="bigint" Nullable="false" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Trnr_Video_Upload">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Course_Id" Type="bigint" Nullable="false" />
+    <Property Name="Video_Id" Type="bigint" Nullable="false" />
+    <Property Name="Video_Status" Type="bigint" Nullable="false" />
+    <Property Name="Approved_By" Type="bigint" />
+    <Property Name="Approved_date" Type="datetime" />
+    <Property Name="Is_Active" Type="bit" Nullable="false" />
+    <Property Name="Created_By" Type="bigint" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime" Nullable="false" />
+    <Property Name="Updated_By" Type="bigint" />
+    <Property Name="Updated_Date" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_tbl_Adm_Info_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Adm_Info" Type="Self.tbl_Adm_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Adm_Info">
+        <PropertyRef Name="Login_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Adm_Info_tbl_Login1">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Adm_Info" Type="Self.tbl_Adm_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Adm_Info">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Adm_Info_tbl_Login2">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Adm_Info" Type="Self.tbl_Adm_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Adm_Info">
+        <PropertyRef Name="Updated_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Adm_Info_tbl_Sub_Master">
+    <End Role="tbl_Sub_Master" Type="Self.tbl_Sub_Master" Multiplicity="1" />
+    <End Role="tbl_Adm_Info" Type="Self.tbl_Adm_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Sub_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Adm_Info">
+        <PropertyRef Name="State" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Adm_Info_tbl_Sub_Master1">
+    <End Role="tbl_Sub_Master" Type="Self.tbl_Sub_Master" Multiplicity="1" />
+    <End Role="tbl_Adm_Info" Type="Self.tbl_Adm_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Sub_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Adm_Info">
+        <PropertyRef Name="Country" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Adm_Info_tbl_Sub_Master2">
+    <End Role="tbl_Sub_Master" Type="Self.tbl_Sub_Master" Multiplicity="1" />
+    <End Role="tbl_Adm_Info" Type="Self.tbl_Adm_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Sub_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Adm_Info">
+        <PropertyRef Name="Qualification" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Course_Detail_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Course_Detail" Type="Self.tbl_Course_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Course_Detail">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Course_Detail_tbl_Login1">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Course_Detail" Type="Self.tbl_Course_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Course_Detail">
+        <PropertyRef Name="Updated_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Course_Detail_tbl_Sub_Master">
+    <End Role="tbl_Sub_Master" Type="Self.tbl_Sub_Master" Multiplicity="1" />
+    <End Role="tbl_Course_Detail" Type="Self.tbl_Course_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Sub_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Course_Detail">
+        <PropertyRef Name="Course_Level" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Course_Detail_tbl_Sub_Master1">
+    <End Role="tbl_Sub_Master" Type="Self.tbl_Sub_Master" Multiplicity="1" />
+    <End Role="tbl_Course_Detail" Type="Self.tbl_Course_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Sub_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Course_Detail">
+        <PropertyRef Name="Course_Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Course_Detail_tbl_Sub_Master2">
+    <End Role="tbl_Sub_Master" Type="Self.tbl_Sub_Master" Multiplicity="1" />
+    <End Role="tbl_Course_Detail" Type="Self.tbl_Course_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Sub_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Course_Detail">
+        <PropertyRef Name="Skill_Category" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Course_Video_tbl_Course_Detail">
+    <End Role="tbl_Course_Detail" Type="Self.tbl_Course_Detail" Multiplicity="1" />
+    <End Role="tbl_Course_Video" Type="Self.tbl_Course_Video" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Course_Detail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Course_Video">
+        <PropertyRef Name="Course_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Course_Video_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Course_Video" Type="Self.tbl_Course_Video" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Course_Video">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Course_Video_tbl_Login1">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Course_Video" Type="Self.tbl_Course_Video" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Course_Video">
+        <PropertyRef Name="Updated_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Course_Video_tbl_Sub_Master">
+    <End Role="tbl_Sub_Master" Type="Self.tbl_Sub_Master" Multiplicity="1" />
+    <End Role="tbl_Course_Video" Type="Self.tbl_Course_Video" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Sub_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Course_Video">
+        <PropertyRef Name="Video_Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Emp_Attempted_Stud_tbl_Emp_Job_Ad">
+    <End Role="tbl_Emp_Job_Ad" Type="Self.tbl_Emp_Job_Ad" Multiplicity="1" />
+    <End Role="tbl_Emp_Attempted_Stud" Type="Self.tbl_Emp_Attempted_Stud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Emp_Job_Ad">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Emp_Attempted_Stud">
+        <PropertyRef Name="Opening_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Emp_Attempted_Stud_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Emp_Attempted_Stud" Type="Self.tbl_Emp_Attempted_Stud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Emp_Attempted_Stud">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Emp_Attempted_Stud_tbl_Login1">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Emp_Attempted_Stud" Type="Self.tbl_Emp_Attempted_Stud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Emp_Attempted_Stud">
+        <PropertyRef Name="Updated_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Emp_Attempted_Stud_tbl_Stud_Personal_Info">
+    <End Role="tbl_Stud_Personal_Info" Type="Self.tbl_Stud_Personal_Info" Multiplicity="1" />
+    <End Role="tbl_Emp_Attempted_Stud" Type="Self.tbl_Emp_Attempted_Stud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stud_Personal_Info">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Emp_Attempted_Stud">
+        <PropertyRef Name="Student_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Emp_Attempted_Stud_tbl_Sub_Master">
+    <End Role="tbl_Sub_Master" Type="Self.tbl_Sub_Master" Multiplicity="1" />
+    <End Role="tbl_Emp_Attempted_Stud" Type="Self.tbl_Emp_Attempted_Stud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Sub_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Emp_Attempted_Stud">
+        <PropertyRef Name="Selected_Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Emp_Info_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Emp_Info" Type="Self.tbl_Emp_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Emp_Info">
+        <PropertyRef Name="Login_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Emp_Info_tbl_Login1">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Emp_Info" Type="Self.tbl_Emp_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Emp_Info">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Emp_Info_tbl_Login2">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Emp_Info" Type="Self.tbl_Emp_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Emp_Info">
+        <PropertyRef Name="Updated_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Emp_Info_tbl_Sub_Master">
+    <End Role="tbl_Sub_Master" Type="Self.tbl_Sub_Master" Multiplicity="1" />
+    <End Role="tbl_Emp_Info" Type="Self.tbl_Emp_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Sub_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Emp_Info">
+        <PropertyRef Name="State" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Emp_Info_tbl_Sub_Master1">
+    <End Role="tbl_Sub_Master" Type="Self.tbl_Sub_Master" Multiplicity="1" />
+    <End Role="tbl_Emp_Info" Type="Self.tbl_Emp_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Sub_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Emp_Info">
+        <PropertyRef Name="Country" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Emp_Job_Ad_Skills_tbl_Emp_Job_Ad">
+    <End Role="tbl_Emp_Job_Ad" Type="Self.tbl_Emp_Job_Ad" Multiplicity="1" />
+    <End Role="tbl_Emp_Job_Ad_Skills" Type="Self.tbl_Emp_Job_Ad_Skills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Emp_Job_Ad">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Emp_Job_Ad_Skills">
+        <PropertyRef Name="Opening_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Emp_Job_Ad_Skills_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Emp_Job_Ad_Skills" Type="Self.tbl_Emp_Job_Ad_Skills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Emp_Job_Ad_Skills">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Emp_Job_Ad_Skills_tbl_Login1">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Emp_Job_Ad_Skills" Type="Self.tbl_Emp_Job_Ad_Skills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Emp_Job_Ad_Skills">
+        <PropertyRef Name="Updated_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Emp_Job_Ad_Skills_tbl_Sub_Master">
+    <End Role="tbl_Sub_Master" Type="Self.tbl_Sub_Master" Multiplicity="1" />
+    <End Role="tbl_Emp_Job_Ad_Skills" Type="Self.tbl_Emp_Job_Ad_Skills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Sub_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Emp_Job_Ad_Skills">
+        <PropertyRef Name="Skill_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Emp_Job_Ad_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Emp_Job_Ad" Type="Self.tbl_Emp_Job_Ad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Emp_Job_Ad">
+        <PropertyRef Name="Company_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Emp_Job_Ad_tbl_Login1">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Emp_Job_Ad" Type="Self.tbl_Emp_Job_Ad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Emp_Job_Ad">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Emp_Job_Ad_tbl_Login2">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Emp_Job_Ad" Type="Self.tbl_Emp_Job_Ad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Emp_Job_Ad">
+        <PropertyRef Name="Updated_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Emp_Job_Ad_tbl_Sub_Master">
+    <End Role="tbl_Sub_Master" Type="Self.tbl_Sub_Master" Multiplicity="1" />
+    <End Role="tbl_Emp_Job_Ad" Type="Self.tbl_Emp_Job_Ad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Sub_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Emp_Job_Ad">
+        <PropertyRef Name="Package_Range" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Emp_Job_Ad_tbl_Sub_Master1">
+    <End Role="tbl_Sub_Master" Type="Self.tbl_Sub_Master" Multiplicity="1" />
+    <End Role="tbl_Emp_Job_Ad" Type="Self.tbl_Emp_Job_Ad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Sub_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Emp_Job_Ad">
+        <PropertyRef Name="Experience_Range" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Fee_Payment_Info_tbl_Course_Detail">
+    <End Role="tbl_Course_Detail" Type="Self.tbl_Course_Detail" Multiplicity="1" />
+    <End Role="tbl_Fee_Payment_Info" Type="Self.tbl_Fee_Payment_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Course_Detail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Fee_Payment_Info">
+        <PropertyRef Name="Course_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Fee_Payment_Info_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Fee_Payment_Info" Type="Self.tbl_Fee_Payment_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Fee_Payment_Info">
+        <PropertyRef Name="Login_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Fee_Payment_Info_tbl_Login1">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Fee_Payment_Info" Type="Self.tbl_Fee_Payment_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Fee_Payment_Info">
+        <PropertyRef Name="Approved_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Fee_Payment_Info_tbl_Login2">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Fee_Payment_Info" Type="Self.tbl_Fee_Payment_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Fee_Payment_Info">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Master_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Master" Type="Self.tbl_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Master">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Master_tbl_Login1">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Master" Type="Self.tbl_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Master">
+        <PropertyRef Name="Updated_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Assignment_Answers_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Stud_Assignment_Answers" Type="Self.tbl_Stud_Assignment_Answers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Assignment_Answers">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Assignment_Answers_tbl_Login1">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Stud_Assignment_Answers" Type="Self.tbl_Stud_Assignment_Answers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Assignment_Answers">
+        <PropertyRef Name="Updated_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Assignment_Answers_tbl_Stud_Personal_Info">
+    <End Role="tbl_Stud_Personal_Info" Type="Self.tbl_Stud_Personal_Info" Multiplicity="1" />
+    <End Role="tbl_Stud_Assignment_Answers" Type="Self.tbl_Stud_Assignment_Answers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stud_Personal_Info">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Assignment_Answers">
+        <PropertyRef Name="Student_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Assignment_Answers_tbl_Trnr_Assignment_Master">
+    <End Role="tbl_Trnr_Assignment_Master" Type="Self.tbl_Trnr_Assignment_Master" Multiplicity="1" />
+    <End Role="tbl_Stud_Assignment_Answers" Type="Self.tbl_Stud_Assignment_Answers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Trnr_Assignment_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Assignment_Answers">
+        <PropertyRef Name="Assignment_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Assignment_Answers_tbl_Trnr_Assignment_Questions">
+    <End Role="tbl_Trnr_Assignment_Questions" Type="Self.tbl_Trnr_Assignment_Questions" Multiplicity="1" />
+    <End Role="tbl_Stud_Assignment_Answers" Type="Self.tbl_Stud_Assignment_Answers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Trnr_Assignment_Questions">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Assignment_Answers">
+        <PropertyRef Name="Question_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Assignment_Info_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Stud_Assignment_Info" Type="Self.tbl_Stud_Assignment_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Assignment_Info">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Assignment_Info_tbl_Login1">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Stud_Assignment_Info" Type="Self.tbl_Stud_Assignment_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Assignment_Info">
+        <PropertyRef Name="Updated_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Assignment_Info_tbl_Stud_Personal_Info">
+    <End Role="tbl_Stud_Personal_Info" Type="Self.tbl_Stud_Personal_Info" Multiplicity="1" />
+    <End Role="tbl_Stud_Assignment_Info" Type="Self.tbl_Stud_Assignment_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stud_Personal_Info">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Assignment_Info">
+        <PropertyRef Name="Student_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Assignment_Info_tbl_Sub_Master">
+    <End Role="tbl_Sub_Master" Type="Self.tbl_Sub_Master" Multiplicity="1" />
+    <End Role="tbl_Stud_Assignment_Info" Type="Self.tbl_Stud_Assignment_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Sub_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Assignment_Info">
+        <PropertyRef Name="Assignment_Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Assignment_Info_tbl_Trnr_Assignment_Master">
+    <End Role="tbl_Trnr_Assignment_Master" Type="Self.tbl_Trnr_Assignment_Master" Multiplicity="1" />
+    <End Role="tbl_Stud_Assignment_Info" Type="Self.tbl_Stud_Assignment_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Trnr_Assignment_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Assignment_Info">
+        <PropertyRef Name="Assignment_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Assignment_Project_Answers_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Stud_Assignment_Project_Answers" Type="Self.tbl_Stud_Assignment_Project_Answers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Assignment_Project_Answers">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Assignment_Project_Answers_tbl_Login1">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Stud_Assignment_Project_Answers" Type="Self.tbl_Stud_Assignment_Project_Answers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Assignment_Project_Answers">
+        <PropertyRef Name="Updated_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Assignment_Project_Answers_tbl_Stud_Personal_Info">
+    <End Role="tbl_Stud_Personal_Info" Type="Self.tbl_Stud_Personal_Info" Multiplicity="1" />
+    <End Role="tbl_Stud_Assignment_Project_Answers" Type="Self.tbl_Stud_Assignment_Project_Answers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stud_Personal_Info">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Assignment_Project_Answers">
+        <PropertyRef Name="Student_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Assignment_Project_Answers_tbl_Trnr_Assignment_Master">
+    <End Role="tbl_Trnr_Assignment_Master" Type="Self.tbl_Trnr_Assignment_Master" Multiplicity="1" />
+    <End Role="tbl_Stud_Assignment_Project_Answers" Type="Self.tbl_Stud_Assignment_Project_Answers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Trnr_Assignment_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Assignment_Project_Answers">
+        <PropertyRef Name="Assignment_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Assignment_Project_Answers_tbl_Trnr_Assignment_Questions">
+    <End Role="tbl_Trnr_Assignment_Questions" Type="Self.tbl_Trnr_Assignment_Questions" Multiplicity="1" />
+    <End Role="tbl_Stud_Assignment_Project_Answers" Type="Self.tbl_Stud_Assignment_Project_Answers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Trnr_Assignment_Questions">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Assignment_Project_Answers">
+        <PropertyRef Name="Question_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Certificate_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Stud_Certificate" Type="Self.tbl_Stud_Certificate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Certificate">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Certificate_tbl_Login1">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Stud_Certificate" Type="Self.tbl_Stud_Certificate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Certificate">
+        <PropertyRef Name="Updated_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Certificate_tbl_Stud_Personal_Info">
+    <End Role="tbl_Stud_Personal_Info" Type="Self.tbl_Stud_Personal_Info" Multiplicity="1" />
+    <End Role="tbl_Stud_Certificate" Type="Self.tbl_Stud_Certificate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stud_Personal_Info">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Certificate">
+        <PropertyRef Name="Student_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Course_Regd_tbl_Course_Detail">
+    <End Role="tbl_Course_Detail" Type="Self.tbl_Course_Detail" Multiplicity="1" />
+    <End Role="tbl_Stud_Course_Regd" Type="Self.tbl_Stud_Course_Regd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Course_Detail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Course_Regd">
+        <PropertyRef Name="Course_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Course_Regd_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Stud_Course_Regd" Type="Self.tbl_Stud_Course_Regd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Course_Regd">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Course_Regd_tbl_Login1">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Stud_Course_Regd" Type="Self.tbl_Stud_Course_Regd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Course_Regd">
+        <PropertyRef Name="Updated_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Course_Regd_tbl_Stud_Personal_Info">
+    <End Role="tbl_Stud_Personal_Info" Type="Self.tbl_Stud_Personal_Info" Multiplicity="1" />
+    <End Role="tbl_Stud_Course_Regd" Type="Self.tbl_Stud_Course_Regd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stud_Personal_Info">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Course_Regd">
+        <PropertyRef Name="Student_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Favourites_Vd_tbl_Course_Detail">
+    <End Role="tbl_Course_Detail" Type="Self.tbl_Course_Detail" Multiplicity="0..1" />
+    <End Role="tbl_Stud_Favourites_Vd" Type="Self.tbl_Stud_Favourites_Vd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Course_Detail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Favourites_Vd">
+        <PropertyRef Name="Course_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Favourites_Vd_tbl_Course_Video">
+    <End Role="tbl_Course_Video" Type="Self.tbl_Course_Video" Multiplicity="0..1" />
+    <End Role="tbl_Stud_Favourites_Vd" Type="Self.tbl_Stud_Favourites_Vd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Course_Video">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Favourites_Vd">
+        <PropertyRef Name="Video_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Favourites_Vd_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Stud_Favourites_Vd" Type="Self.tbl_Stud_Favourites_Vd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Favourites_Vd">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Favourites_Vd_tbl_Login1">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Stud_Favourites_Vd" Type="Self.tbl_Stud_Favourites_Vd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Favourites_Vd">
+        <PropertyRef Name="Updated_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Favourites_Vd_tbl_Stud_Personal_Info">
+    <End Role="tbl_Stud_Personal_Info" Type="Self.tbl_Stud_Personal_Info" Multiplicity="0..1" />
+    <End Role="tbl_Stud_Favourites_Vd" Type="Self.tbl_Stud_Favourites_Vd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stud_Personal_Info">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Favourites_Vd">
+        <PropertyRef Name="Student_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Job_Exp_Info_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Stud_Job_Exp_Info" Type="Self.tbl_Stud_Job_Exp_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Job_Exp_Info">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Job_Exp_Info_tbl_Login2">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Stud_Job_Exp_Info" Type="Self.tbl_Stud_Job_Exp_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Job_Exp_Info">
+        <PropertyRef Name="Updated_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Job_Exp_Info_tbl_Stud_Personal_Info1">
+    <End Role="tbl_Stud_Personal_Info" Type="Self.tbl_Stud_Personal_Info" Multiplicity="1" />
+    <End Role="tbl_Stud_Job_Exp_Info" Type="Self.tbl_Stud_Job_Exp_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stud_Personal_Info">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Job_Exp_Info">
+        <PropertyRef Name="Student_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Notes_tbl_Course_Detail">
+    <End Role="tbl_Course_Detail" Type="Self.tbl_Course_Detail" Multiplicity="1" />
+    <End Role="tbl_Stud_Notes" Type="Self.tbl_Stud_Notes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Course_Detail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Notes">
+        <PropertyRef Name="Course_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Notes_tbl_Course_Video">
+    <End Role="tbl_Course_Video" Type="Self.tbl_Course_Video" Multiplicity="1" />
+    <End Role="tbl_Stud_Notes" Type="Self.tbl_Stud_Notes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Course_Video">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Notes">
+        <PropertyRef Name="Video_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Notes_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Stud_Notes" Type="Self.tbl_Stud_Notes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Notes">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Notes_tbl_Login1">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Stud_Notes" Type="Self.tbl_Stud_Notes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Notes">
+        <PropertyRef Name="Updated_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Notes_tbl_Stud_Personal_Info">
+    <End Role="tbl_Stud_Personal_Info" Type="Self.tbl_Stud_Personal_Info" Multiplicity="1" />
+    <End Role="tbl_Stud_Notes" Type="Self.tbl_Stud_Notes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stud_Personal_Info">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Notes">
+        <PropertyRef Name="Student_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Personal_Info_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Stud_Personal_Info" Type="Self.tbl_Stud_Personal_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Personal_Info">
+        <PropertyRef Name="Login_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Personal_Info_tbl_Login1">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Stud_Personal_Info" Type="Self.tbl_Stud_Personal_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Personal_Info">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Personal_Info_tbl_Login2">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Stud_Personal_Info" Type="Self.tbl_Stud_Personal_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Personal_Info">
+        <PropertyRef Name="Updated_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Resume_tbl_Stud_Personal_Info">
+    <End Role="tbl_Stud_Personal_Info" Type="Self.tbl_Stud_Personal_Info" Multiplicity="1" />
+    <End Role="tbl_Stud_Resume" Type="Self.tbl_Stud_Resume" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stud_Personal_Info">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Resume">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Resume_tbl_Stud_Personal_Info1">
+    <End Role="tbl_Stud_Personal_Info" Type="Self.tbl_Stud_Personal_Info" Multiplicity="0..1" />
+    <End Role="tbl_Stud_Resume" Type="Self.tbl_Stud_Resume" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stud_Personal_Info">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Resume">
+        <PropertyRef Name="Updated_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Resume_tbl_Stud_Resume">
+    <End Role="tbl_Stud_Personal_Info" Type="Self.tbl_Stud_Personal_Info" Multiplicity="0..1" />
+    <End Role="tbl_Stud_Resume" Type="Self.tbl_Stud_Resume" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stud_Personal_Info">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Resume">
+        <PropertyRef Name="Student_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Skill_Set_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Stud_Skill_Set" Type="Self.tbl_Stud_Skill_Set" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Skill_Set">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Skill_Set_tbl_Login1">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Stud_Skill_Set" Type="Self.tbl_Stud_Skill_Set" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Skill_Set">
+        <PropertyRef Name="Updated_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Skill_Set_tbl_Stud_Personal_Info">
+    <End Role="tbl_Stud_Personal_Info" Type="Self.tbl_Stud_Personal_Info" Multiplicity="1" />
+    <End Role="tbl_Stud_Skill_Set" Type="Self.tbl_Stud_Skill_Set" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stud_Personal_Info">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Skill_Set">
+        <PropertyRef Name="Student_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Skill_Set_tbl_Sub_Master">
+    <End Role="tbl_Sub_Master" Type="Self.tbl_Sub_Master" Multiplicity="1" />
+    <End Role="tbl_Stud_Skill_Set" Type="Self.tbl_Stud_Skill_Set" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Sub_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Skill_Set">
+        <PropertyRef Name="Skill_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Skill_Set_tbl_Sub_Master1">
+    <End Role="tbl_Sub_Master" Type="Self.tbl_Sub_Master" Multiplicity="1" />
+    <End Role="tbl_Stud_Skill_Set" Type="Self.tbl_Stud_Skill_Set" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Sub_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Skill_Set">
+        <PropertyRef Name="Experience" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Viewed_Vd_tbl_Course_Video">
+    <End Role="tbl_Course_Video" Type="Self.tbl_Course_Video" Multiplicity="1" />
+    <End Role="tbl_Stud_Viewed_Vd" Type="Self.tbl_Stud_Viewed_Vd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Course_Video">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Viewed_Vd">
+        <PropertyRef Name="Video_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Viewed_Vd_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Stud_Viewed_Vd" Type="Self.tbl_Stud_Viewed_Vd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Viewed_Vd">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Viewed_Vd_tbl_Login1">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Stud_Viewed_Vd" Type="Self.tbl_Stud_Viewed_Vd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Viewed_Vd">
+        <PropertyRef Name="Updated_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Stud_Viewed_Vd_tbl_Stud_Personal_Info1">
+    <End Role="tbl_Stud_Personal_Info" Type="Self.tbl_Stud_Personal_Info" Multiplicity="1" />
+    <End Role="tbl_Stud_Viewed_Vd" Type="Self.tbl_Stud_Viewed_Vd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stud_Personal_Info">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Stud_Viewed_Vd">
+        <PropertyRef Name="Student_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Sub_Master_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Sub_Master" Type="Self.tbl_Sub_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Sub_Master">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Sub_Master_tbl_Login1">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Sub_Master" Type="Self.tbl_Sub_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Sub_Master">
+        <PropertyRef Name="Updated_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Sub_Master_tbl_Master">
+    <End Role="tbl_Master" Type="Self.tbl_Master" Multiplicity="1" />
+    <End Role="tbl_Sub_Master" Type="Self.tbl_Sub_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Sub_Master">
+        <PropertyRef Name="Master_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Assignment_Master_tbl_Course_Detail">
+    <End Role="tbl_Course_Detail" Type="Self.tbl_Course_Detail" Multiplicity="1" />
+    <End Role="tbl_Trnr_Assignment_Master" Type="Self.tbl_Trnr_Assignment_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Course_Detail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Assignment_Master">
+        <PropertyRef Name="Course_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Assignment_Master_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Trnr_Assignment_Master" Type="Self.tbl_Trnr_Assignment_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Assignment_Master">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Assignment_Master_tbl_Login1">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Trnr_Assignment_Master" Type="Self.tbl_Trnr_Assignment_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Assignment_Master">
+        <PropertyRef Name="Updated_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Assignment_Master_tbl_Stud_Personal_Info">
+    <End Role="tbl_Stud_Personal_Info" Type="Self.tbl_Stud_Personal_Info" Multiplicity="1" />
+    <End Role="tbl_Trnr_Assignment_Master" Type="Self.tbl_Trnr_Assignment_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stud_Personal_Info">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Assignment_Master">
+        <PropertyRef Name="Trainer_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Assignment_Master_tbl_Sub_Master">
+    <End Role="tbl_Sub_Master" Type="Self.tbl_Sub_Master" Multiplicity="1" />
+    <End Role="tbl_Trnr_Assignment_Master" Type="Self.tbl_Trnr_Assignment_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Sub_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Assignment_Master">
+        <PropertyRef Name="Assignment_Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Assignment_Questions_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Trnr_Assignment_Questions" Type="Self.tbl_Trnr_Assignment_Questions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Assignment_Questions">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Assignment_Questions_tbl_Login1">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Trnr_Assignment_Questions" Type="Self.tbl_Trnr_Assignment_Questions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Assignment_Questions">
+        <PropertyRef Name="Updated_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Assignment_Questions_tbl_Sub_Master">
+    <End Role="tbl_Sub_Master" Type="Self.tbl_Sub_Master" Multiplicity="1" />
+    <End Role="tbl_Trnr_Assignment_Questions" Type="Self.tbl_Trnr_Assignment_Questions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Sub_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Assignment_Questions">
+        <PropertyRef Name="Question_Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Assignment_Questions_tbl_Trnr_Assignment_Master">
+    <End Role="tbl_Trnr_Assignment_Master" Type="Self.tbl_Trnr_Assignment_Master" Multiplicity="1" />
+    <End Role="tbl_Trnr_Assignment_Questions" Type="Self.tbl_Trnr_Assignment_Questions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Trnr_Assignment_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Assignment_Questions">
+        <PropertyRef Name="Assignment_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Job_Exp_Info_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Trnr_Job_Exp_Info" Type="Self.tbl_Trnr_Job_Exp_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Job_Exp_Info">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Job_Exp_Info_tbl_Login1">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Trnr_Job_Exp_Info" Type="Self.tbl_Trnr_Job_Exp_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Job_Exp_Info">
+        <PropertyRef Name="Updated_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Job_Exp_Info_tbl_Trnr_Personal_Info">
+    <End Role="tbl_Trnr_Personal_Info" Type="Self.tbl_Trnr_Personal_Info" Multiplicity="1" />
+    <End Role="tbl_Trnr_Job_Exp_Info" Type="Self.tbl_Trnr_Job_Exp_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Trnr_Personal_Info">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Job_Exp_Info">
+        <PropertyRef Name="Trainer_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Personal_Info_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Trnr_Personal_Info" Type="Self.tbl_Trnr_Personal_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Personal_Info">
+        <PropertyRef Name="Login_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Personal_Info_tbl_Login1">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Trnr_Personal_Info" Type="Self.tbl_Trnr_Personal_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Personal_Info">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Personal_Info_tbl_Login2">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Trnr_Personal_Info" Type="Self.tbl_Trnr_Personal_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Personal_Info">
+        <PropertyRef Name="Updated_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Personal_Info_tbl_Sub_Master">
+    <End Role="tbl_Sub_Master" Type="Self.tbl_Sub_Master" Multiplicity="1" />
+    <End Role="tbl_Trnr_Personal_Info" Type="Self.tbl_Trnr_Personal_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Sub_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Personal_Info">
+        <PropertyRef Name="State" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Personal_Info_tbl_Sub_Master1">
+    <End Role="tbl_Sub_Master" Type="Self.tbl_Sub_Master" Multiplicity="1" />
+    <End Role="tbl_Trnr_Personal_Info" Type="Self.tbl_Trnr_Personal_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Sub_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Personal_Info">
+        <PropertyRef Name="Country" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Personal_Info_tbl_Sub_Master2">
+    <End Role="tbl_Sub_Master" Type="Self.tbl_Sub_Master" Multiplicity="1" />
+    <End Role="tbl_Trnr_Personal_Info" Type="Self.tbl_Trnr_Personal_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Sub_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Personal_Info">
+        <PropertyRef Name="Qualification" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Skill_Set_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Trnr_Skill_Set" Type="Self.tbl_Trnr_Skill_Set" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Skill_Set">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Skill_Set_tbl_Login1">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Trnr_Skill_Set" Type="Self.tbl_Trnr_Skill_Set" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Skill_Set">
+        <PropertyRef Name="Updated_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Skill_Set_tbl_Sub_Master">
+    <End Role="tbl_Sub_Master" Type="Self.tbl_Sub_Master" Multiplicity="1" />
+    <End Role="tbl_Trnr_Skill_Set" Type="Self.tbl_Trnr_Skill_Set" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Sub_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Skill_Set">
+        <PropertyRef Name="Skill_Set_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Skill_Set_tbl_Trnr_Personal_Info">
+    <End Role="tbl_Trnr_Personal_Info" Type="Self.tbl_Trnr_Personal_Info" Multiplicity="1" />
+    <End Role="tbl_Trnr_Skill_Set" Type="Self.tbl_Trnr_Skill_Set" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Trnr_Personal_Info">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Skill_Set">
+        <PropertyRef Name="Trainer_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Video_Upload_tbl_Course_Detail">
+    <End Role="tbl_Course_Detail" Type="Self.tbl_Course_Detail" Multiplicity="1" />
+    <End Role="tbl_Trnr_Video_Upload" Type="Self.tbl_Trnr_Video_Upload" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Course_Detail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Video_Upload">
+        <PropertyRef Name="Course_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Video_Upload_tbl_Course_Video">
+    <End Role="tbl_Course_Video" Type="Self.tbl_Course_Video" Multiplicity="1" />
+    <End Role="tbl_Trnr_Video_Upload" Type="Self.tbl_Trnr_Video_Upload" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Course_Video">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Video_Upload">
+        <PropertyRef Name="Video_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Video_Upload_tbl_Login">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Trnr_Video_Upload" Type="Self.tbl_Trnr_Video_Upload" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Video_Upload">
+        <PropertyRef Name="Approved_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Video_Upload_tbl_Login1">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="1" />
+    <End Role="tbl_Trnr_Video_Upload" Type="Self.tbl_Trnr_Video_Upload" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Video_Upload">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Video_Upload_tbl_Login2">
+    <End Role="tbl_Login" Type="Self.tbl_Login" Multiplicity="0..1" />
+    <End Role="tbl_Trnr_Video_Upload" Type="Self.tbl_Trnr_Video_Upload" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Login">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Video_Upload">
+        <PropertyRef Name="Updated_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Trnr_Video_Upload_tbl_Sub_Master">
+    <End Role="tbl_Sub_Master" Type="Self.tbl_Sub_Master" Multiplicity="1" />
+    <End Role="tbl_Trnr_Video_Upload" Type="Self.tbl_Trnr_Video_Upload" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Sub_Master">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_Trnr_Video_Upload">
+        <PropertyRef Name="Video_Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CourseManagementModelStoreContainer">
+    <EntitySet Name="tbl_Fee_Payment_Info" EntityType="Self.tbl_Fee_Payment_Info" Schema="admin" store:Type="Tables" />
+    <EntitySet Name="tbl_Course_Detail" EntityType="Self.tbl_Course_Detail" Schema="course" store:Type="Tables" />
+    <EntitySet Name="tbl_Course_Video" EntityType="Self.tbl_Course_Video" Schema="course" store:Type="Tables" />
+    <EntitySet Name="tbl_Emp_Attempted_Stud" EntityType="Self.tbl_Emp_Attempted_Stud" Schema="employer" store:Type="Tables" />
+    <EntitySet Name="tbl_Emp_Info" EntityType="Self.tbl_Emp_Info" Schema="employer" store:Type="Tables" />
+    <EntitySet Name="tbl_Emp_Job_Ad" EntityType="Self.tbl_Emp_Job_Ad" Schema="employer" store:Type="Tables" />
+    <EntitySet Name="tbl_Emp_Job_Ad_Skills" EntityType="Self.tbl_Emp_Job_Ad_Skills" Schema="employer" store:Type="Tables" />
+    <EntitySet Name="tbl_Login" EntityType="Self.tbl_Login" Schema="master" store:Type="Tables" />
+    <EntitySet Name="tbl_Master" EntityType="Self.tbl_Master" Schema="master" store:Type="Tables" />
+    <EntitySet Name="tbl_Sub_Master" EntityType="Self.tbl_Sub_Master" Schema="master" store:Type="Tables" />
+    <EntitySet Name="tbl_Stud_Assignment_Answers" EntityType="Self.tbl_Stud_Assignment_Answers" Schema="student" store:Type="Tables" />
+    <EntitySet Name="tbl_Stud_Assignment_Info" EntityType="Self.tbl_Stud_Assignment_Info" Schema="student" store:Type="Tables" />
+    <EntitySet Name="tbl_Stud_Assignment_Project_Answers" EntityType="Self.tbl_Stud_Assignment_Project_Answers" Schema="student" store:Type="Tables" />
+    <EntitySet Name="tbl_Stud_Certificate" EntityType="Self.tbl_Stud_Certificate" Schema="student" store:Type="Tables" />
+    <EntitySet Name="tbl_Stud_Course_Regd" EntityType="Self.tbl_Stud_Course_Regd" Schema="student" store:Type="Tables" />
+    <EntitySet Name="tbl_Stud_Favourites_Vd" EntityType="Self.tbl_Stud_Favourites_Vd" Schema="student" store:Type="Tables" />
+    <EntitySet Name="tbl_Stud_Job_Exp_Info" EntityType="Self.tbl_Stud_Job_Exp_Info" Schema="student" store:Type="Tables" />
+    <EntitySet Name="tbl_Stud_Notes" EntityType="Self.tbl_Stud_Notes" Schema="student" store:Type="Tables" />
+    <EntitySet Name="tbl_Stud_Personal_Info" EntityType="Self.tbl_Stud_Personal_Info" Schema="student" store:Type="Tables" />
+    <EntitySet Name="tbl_Stud_Resume" EntityType="Self.tbl_Stud_Resume" Schema="student" store:Type="Tables" />
+    <EntitySet Name="tbl_Stud_Skill_Set" EntityType="Self.tbl_Stud_Skill_Set" Schema="student" store:Type="Tables" />
+    <EntitySet Name="tbl_Stud_Viewed_Vd" EntityType="Self.tbl_Stud_Viewed_Vd" Schema="student" store:Type="Tables" />
+    <EntitySet Name="tbl_Trnr_Assignment_Master" EntityType="Self.tbl_Trnr_Assignment_Master" Schema="trainer" store:Type="Tables" />
+    <EntitySet Name="tbl_Trnr_Assignment_Questions" EntityType="Self.tbl_Trnr_Assignment_Questions" Schema="trainer" store:Type="Tables" />
+    <EntitySet Name="tbl_Trnr_Job_Exp_Info" EntityType="Self.tbl_Trnr_Job_Exp_Info" Schema="trainer" store:Type="Tables" />
+    <EntitySet Name="tbl_Trnr_Personal_Info" EntityType="Self.tbl_Trnr_Personal_Info" Schema="trainer" store:Type="Tables" />
+    <EntitySet Name="tbl_Trnr_Skill_Set" EntityType="Self.tbl_Trnr_Skill_Set" Schema="trainer" store:Type="Tables" />
+    <EntitySet Name="tbl_Trnr_Video_Upload" EntityType="Self.tbl_Trnr_Video_Upload" Schema="trainer" store:Type="Tables" />
+    <EntitySet Name="tbl_Adm_Info" EntityType="Self.tbl_Adm_Info" store:Type="Tables" store:Schema="admin">
+      <DefiningQuery>SELECT 
+    [tbl_Adm_Info].[ID] AS [ID], 
+    [tbl_Adm_Info].[Login_Id] AS [Login_Id], 
+    [tbl_Adm_Info].[First_Name] AS [First_Name], 
+    [tbl_Adm_Info].[Last_Name] AS [Last_Name], 
+    [tbl_Adm_Info].[Alias] AS [Alias], 
+    [tbl_Adm_Info].[Gender] AS [Gender], 
+    [tbl_Adm_Info].[Date_Of_Birth] AS [Date_Of_Birth], 
+    [tbl_Adm_Info].[Mobile_Number] AS [Mobile_Number], 
+    [tbl_Adm_Info].[Address_Line_1] AS [Address_Line_1], 
+    [tbl_Adm_Info].[Address_Line_2] AS [Address_Line_2], 
+    [tbl_Adm_Info].[Pin_Code] AS [Pin_Code], 
+    [tbl_Adm_Info].[State] AS [State], 
+    [tbl_Adm_Info].[Country] AS [Country], 
+    [tbl_Adm_Info].[Qualification] AS [Qualification], 
+    [tbl_Adm_Info].[Photo] AS [Photo], 
+    [tbl_Adm_Info].[Secondary_Email] AS [Secondary_Email], 
+    [tbl_Adm_Info].[Is_Active] AS [Is_Active], 
+    [tbl_Adm_Info].[Created_By] AS [Created_By], 
+    [tbl_Adm_Info].[Created_Date] AS [Created_Date], 
+    [tbl_Adm_Info].[Updated_By] AS [Updated_By], 
+    [tbl_Adm_Info].[Updated_Date] AS [Updated_Date]
+    FROM [admin].[tbl_Adm_Info] AS [tbl_Adm_Info]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_tbl_Adm_Info_tbl_Login" Association="Self.FK_tbl_Adm_Info_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Adm_Info" EntitySet="tbl_Adm_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Adm_Info_tbl_Login1" Association="Self.FK_tbl_Adm_Info_tbl_Login1">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Adm_Info" EntitySet="tbl_Adm_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Adm_Info_tbl_Login2" Association="Self.FK_tbl_Adm_Info_tbl_Login2">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Adm_Info" EntitySet="tbl_Adm_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Adm_Info_tbl_Sub_Master" Association="Self.FK_tbl_Adm_Info_tbl_Sub_Master">
+      <End Role="tbl_Sub_Master" EntitySet="tbl_Sub_Master" />
+      <End Role="tbl_Adm_Info" EntitySet="tbl_Adm_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Adm_Info_tbl_Sub_Master1" Association="Self.FK_tbl_Adm_Info_tbl_Sub_Master1">
+      <End Role="tbl_Sub_Master" EntitySet="tbl_Sub_Master" />
+      <End Role="tbl_Adm_Info" EntitySet="tbl_Adm_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Adm_Info_tbl_Sub_Master2" Association="Self.FK_tbl_Adm_Info_tbl_Sub_Master2">
+      <End Role="tbl_Sub_Master" EntitySet="tbl_Sub_Master" />
+      <End Role="tbl_Adm_Info" EntitySet="tbl_Adm_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Course_Detail_tbl_Login" Association="Self.FK_tbl_Course_Detail_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Course_Detail" EntitySet="tbl_Course_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Course_Detail_tbl_Login1" Association="Self.FK_tbl_Course_Detail_tbl_Login1">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Course_Detail" EntitySet="tbl_Course_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Course_Detail_tbl_Sub_Master" Association="Self.FK_tbl_Course_Detail_tbl_Sub_Master">
+      <End Role="tbl_Sub_Master" EntitySet="tbl_Sub_Master" />
+      <End Role="tbl_Course_Detail" EntitySet="tbl_Course_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Course_Detail_tbl_Sub_Master1" Association="Self.FK_tbl_Course_Detail_tbl_Sub_Master1">
+      <End Role="tbl_Sub_Master" EntitySet="tbl_Sub_Master" />
+      <End Role="tbl_Course_Detail" EntitySet="tbl_Course_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Course_Detail_tbl_Sub_Master2" Association="Self.FK_tbl_Course_Detail_tbl_Sub_Master2">
+      <End Role="tbl_Sub_Master" EntitySet="tbl_Sub_Master" />
+      <End Role="tbl_Course_Detail" EntitySet="tbl_Course_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Course_Video_tbl_Course_Detail" Association="Self.FK_tbl_Course_Video_tbl_Course_Detail">
+      <End Role="tbl_Course_Detail" EntitySet="tbl_Course_Detail" />
+      <End Role="tbl_Course_Video" EntitySet="tbl_Course_Video" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Course_Video_tbl_Login" Association="Self.FK_tbl_Course_Video_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Course_Video" EntitySet="tbl_Course_Video" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Course_Video_tbl_Login1" Association="Self.FK_tbl_Course_Video_tbl_Login1">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Course_Video" EntitySet="tbl_Course_Video" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Course_Video_tbl_Sub_Master" Association="Self.FK_tbl_Course_Video_tbl_Sub_Master">
+      <End Role="tbl_Sub_Master" EntitySet="tbl_Sub_Master" />
+      <End Role="tbl_Course_Video" EntitySet="tbl_Course_Video" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Emp_Attempted_Stud_tbl_Emp_Job_Ad" Association="Self.FK_tbl_Emp_Attempted_Stud_tbl_Emp_Job_Ad">
+      <End Role="tbl_Emp_Job_Ad" EntitySet="tbl_Emp_Job_Ad" />
+      <End Role="tbl_Emp_Attempted_Stud" EntitySet="tbl_Emp_Attempted_Stud" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Emp_Attempted_Stud_tbl_Login" Association="Self.FK_tbl_Emp_Attempted_Stud_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Emp_Attempted_Stud" EntitySet="tbl_Emp_Attempted_Stud" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Emp_Attempted_Stud_tbl_Login1" Association="Self.FK_tbl_Emp_Attempted_Stud_tbl_Login1">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Emp_Attempted_Stud" EntitySet="tbl_Emp_Attempted_Stud" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Emp_Attempted_Stud_tbl_Stud_Personal_Info" Association="Self.FK_tbl_Emp_Attempted_Stud_tbl_Stud_Personal_Info">
+      <End Role="tbl_Stud_Personal_Info" EntitySet="tbl_Stud_Personal_Info" />
+      <End Role="tbl_Emp_Attempted_Stud" EntitySet="tbl_Emp_Attempted_Stud" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Emp_Attempted_Stud_tbl_Sub_Master" Association="Self.FK_tbl_Emp_Attempted_Stud_tbl_Sub_Master">
+      <End Role="tbl_Sub_Master" EntitySet="tbl_Sub_Master" />
+      <End Role="tbl_Emp_Attempted_Stud" EntitySet="tbl_Emp_Attempted_Stud" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Emp_Info_tbl_Login" Association="Self.FK_tbl_Emp_Info_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Emp_Info" EntitySet="tbl_Emp_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Emp_Info_tbl_Login1" Association="Self.FK_tbl_Emp_Info_tbl_Login1">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Emp_Info" EntitySet="tbl_Emp_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Emp_Info_tbl_Login2" Association="Self.FK_tbl_Emp_Info_tbl_Login2">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Emp_Info" EntitySet="tbl_Emp_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Emp_Info_tbl_Sub_Master" Association="Self.FK_tbl_Emp_Info_tbl_Sub_Master">
+      <End Role="tbl_Sub_Master" EntitySet="tbl_Sub_Master" />
+      <End Role="tbl_Emp_Info" EntitySet="tbl_Emp_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Emp_Info_tbl_Sub_Master1" Association="Self.FK_tbl_Emp_Info_tbl_Sub_Master1">
+      <End Role="tbl_Sub_Master" EntitySet="tbl_Sub_Master" />
+      <End Role="tbl_Emp_Info" EntitySet="tbl_Emp_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Emp_Job_Ad_Skills_tbl_Emp_Job_Ad" Association="Self.FK_tbl_Emp_Job_Ad_Skills_tbl_Emp_Job_Ad">
+      <End Role="tbl_Emp_Job_Ad" EntitySet="tbl_Emp_Job_Ad" />
+      <End Role="tbl_Emp_Job_Ad_Skills" EntitySet="tbl_Emp_Job_Ad_Skills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Emp_Job_Ad_Skills_tbl_Login" Association="Self.FK_tbl_Emp_Job_Ad_Skills_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Emp_Job_Ad_Skills" EntitySet="tbl_Emp_Job_Ad_Skills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Emp_Job_Ad_Skills_tbl_Login1" Association="Self.FK_tbl_Emp_Job_Ad_Skills_tbl_Login1">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Emp_Job_Ad_Skills" EntitySet="tbl_Emp_Job_Ad_Skills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Emp_Job_Ad_Skills_tbl_Sub_Master" Association="Self.FK_tbl_Emp_Job_Ad_Skills_tbl_Sub_Master">
+      <End Role="tbl_Sub_Master" EntitySet="tbl_Sub_Master" />
+      <End Role="tbl_Emp_Job_Ad_Skills" EntitySet="tbl_Emp_Job_Ad_Skills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Emp_Job_Ad_tbl_Login" Association="Self.FK_tbl_Emp_Job_Ad_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Emp_Job_Ad" EntitySet="tbl_Emp_Job_Ad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Emp_Job_Ad_tbl_Login1" Association="Self.FK_tbl_Emp_Job_Ad_tbl_Login1">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Emp_Job_Ad" EntitySet="tbl_Emp_Job_Ad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Emp_Job_Ad_tbl_Login2" Association="Self.FK_tbl_Emp_Job_Ad_tbl_Login2">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Emp_Job_Ad" EntitySet="tbl_Emp_Job_Ad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Emp_Job_Ad_tbl_Sub_Master" Association="Self.FK_tbl_Emp_Job_Ad_tbl_Sub_Master">
+      <End Role="tbl_Sub_Master" EntitySet="tbl_Sub_Master" />
+      <End Role="tbl_Emp_Job_Ad" EntitySet="tbl_Emp_Job_Ad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Emp_Job_Ad_tbl_Sub_Master1" Association="Self.FK_tbl_Emp_Job_Ad_tbl_Sub_Master1">
+      <End Role="tbl_Sub_Master" EntitySet="tbl_Sub_Master" />
+      <End Role="tbl_Emp_Job_Ad" EntitySet="tbl_Emp_Job_Ad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Fee_Payment_Info_tbl_Course_Detail" Association="Self.FK_tbl_Fee_Payment_Info_tbl_Course_Detail">
+      <End Role="tbl_Course_Detail" EntitySet="tbl_Course_Detail" />
+      <End Role="tbl_Fee_Payment_Info" EntitySet="tbl_Fee_Payment_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Fee_Payment_Info_tbl_Login" Association="Self.FK_tbl_Fee_Payment_Info_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Fee_Payment_Info" EntitySet="tbl_Fee_Payment_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Fee_Payment_Info_tbl_Login1" Association="Self.FK_tbl_Fee_Payment_Info_tbl_Login1">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Fee_Payment_Info" EntitySet="tbl_Fee_Payment_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Fee_Payment_Info_tbl_Login2" Association="Self.FK_tbl_Fee_Payment_Info_tbl_Login2">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Fee_Payment_Info" EntitySet="tbl_Fee_Payment_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Master_tbl_Login" Association="Self.FK_tbl_Master_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Master" EntitySet="tbl_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Master_tbl_Login1" Association="Self.FK_tbl_Master_tbl_Login1">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Master" EntitySet="tbl_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Assignment_Answers_tbl_Login" Association="Self.FK_tbl_Stud_Assignment_Answers_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Stud_Assignment_Answers" EntitySet="tbl_Stud_Assignment_Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Assignment_Answers_tbl_Login1" Association="Self.FK_tbl_Stud_Assignment_Answers_tbl_Login1">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Stud_Assignment_Answers" EntitySet="tbl_Stud_Assignment_Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Assignment_Answers_tbl_Stud_Personal_Info" Association="Self.FK_tbl_Stud_Assignment_Answers_tbl_Stud_Personal_Info">
+      <End Role="tbl_Stud_Personal_Info" EntitySet="tbl_Stud_Personal_Info" />
+      <End Role="tbl_Stud_Assignment_Answers" EntitySet="tbl_Stud_Assignment_Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Assignment_Answers_tbl_Trnr_Assignment_Master" Association="Self.FK_tbl_Stud_Assignment_Answers_tbl_Trnr_Assignment_Master">
+      <End Role="tbl_Trnr_Assignment_Master" EntitySet="tbl_Trnr_Assignment_Master" />
+      <End Role="tbl_Stud_Assignment_Answers" EntitySet="tbl_Stud_Assignment_Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Assignment_Answers_tbl_Trnr_Assignment_Questions" Association="Self.FK_tbl_Stud_Assignment_Answers_tbl_Trnr_Assignment_Questions">
+      <End Role="tbl_Trnr_Assignment_Questions" EntitySet="tbl_Trnr_Assignment_Questions" />
+      <End Role="tbl_Stud_Assignment_Answers" EntitySet="tbl_Stud_Assignment_Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Assignment_Info_tbl_Login" Association="Self.FK_tbl_Stud_Assignment_Info_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Stud_Assignment_Info" EntitySet="tbl_Stud_Assignment_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Assignment_Info_tbl_Login1" Association="Self.FK_tbl_Stud_Assignment_Info_tbl_Login1">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Stud_Assignment_Info" EntitySet="tbl_Stud_Assignment_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Assignment_Info_tbl_Stud_Personal_Info" Association="Self.FK_tbl_Stud_Assignment_Info_tbl_Stud_Personal_Info">
+      <End Role="tbl_Stud_Personal_Info" EntitySet="tbl_Stud_Personal_Info" />
+      <End Role="tbl_Stud_Assignment_Info" EntitySet="tbl_Stud_Assignment_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Assignment_Info_tbl_Sub_Master" Association="Self.FK_tbl_Stud_Assignment_Info_tbl_Sub_Master">
+      <End Role="tbl_Sub_Master" EntitySet="tbl_Sub_Master" />
+      <End Role="tbl_Stud_Assignment_Info" EntitySet="tbl_Stud_Assignment_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Assignment_Info_tbl_Trnr_Assignment_Master" Association="Self.FK_tbl_Stud_Assignment_Info_tbl_Trnr_Assignment_Master">
+      <End Role="tbl_Trnr_Assignment_Master" EntitySet="tbl_Trnr_Assignment_Master" />
+      <End Role="tbl_Stud_Assignment_Info" EntitySet="tbl_Stud_Assignment_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Assignment_Project_Answers_tbl_Login" Association="Self.FK_tbl_Stud_Assignment_Project_Answers_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Stud_Assignment_Project_Answers" EntitySet="tbl_Stud_Assignment_Project_Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Assignment_Project_Answers_tbl_Login1" Association="Self.FK_tbl_Stud_Assignment_Project_Answers_tbl_Login1">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Stud_Assignment_Project_Answers" EntitySet="tbl_Stud_Assignment_Project_Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Assignment_Project_Answers_tbl_Stud_Personal_Info" Association="Self.FK_tbl_Stud_Assignment_Project_Answers_tbl_Stud_Personal_Info">
+      <End Role="tbl_Stud_Personal_Info" EntitySet="tbl_Stud_Personal_Info" />
+      <End Role="tbl_Stud_Assignment_Project_Answers" EntitySet="tbl_Stud_Assignment_Project_Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Assignment_Project_Answers_tbl_Trnr_Assignment_Master" Association="Self.FK_tbl_Stud_Assignment_Project_Answers_tbl_Trnr_Assignment_Master">
+      <End Role="tbl_Trnr_Assignment_Master" EntitySet="tbl_Trnr_Assignment_Master" />
+      <End Role="tbl_Stud_Assignment_Project_Answers" EntitySet="tbl_Stud_Assignment_Project_Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Assignment_Project_Answers_tbl_Trnr_Assignment_Questions" Association="Self.FK_tbl_Stud_Assignment_Project_Answers_tbl_Trnr_Assignment_Questions">
+      <End Role="tbl_Trnr_Assignment_Questions" EntitySet="tbl_Trnr_Assignment_Questions" />
+      <End Role="tbl_Stud_Assignment_Project_Answers" EntitySet="tbl_Stud_Assignment_Project_Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Certificate_tbl_Login" Association="Self.FK_tbl_Stud_Certificate_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Stud_Certificate" EntitySet="tbl_Stud_Certificate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Certificate_tbl_Login1" Association="Self.FK_tbl_Stud_Certificate_tbl_Login1">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Stud_Certificate" EntitySet="tbl_Stud_Certificate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Certificate_tbl_Stud_Personal_Info" Association="Self.FK_tbl_Stud_Certificate_tbl_Stud_Personal_Info">
+      <End Role="tbl_Stud_Personal_Info" EntitySet="tbl_Stud_Personal_Info" />
+      <End Role="tbl_Stud_Certificate" EntitySet="tbl_Stud_Certificate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Course_Regd_tbl_Course_Detail" Association="Self.FK_tbl_Stud_Course_Regd_tbl_Course_Detail">
+      <End Role="tbl_Course_Detail" EntitySet="tbl_Course_Detail" />
+      <End Role="tbl_Stud_Course_Regd" EntitySet="tbl_Stud_Course_Regd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Course_Regd_tbl_Login" Association="Self.FK_tbl_Stud_Course_Regd_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Stud_Course_Regd" EntitySet="tbl_Stud_Course_Regd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Course_Regd_tbl_Login1" Association="Self.FK_tbl_Stud_Course_Regd_tbl_Login1">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Stud_Course_Regd" EntitySet="tbl_Stud_Course_Regd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Course_Regd_tbl_Stud_Personal_Info" Association="Self.FK_tbl_Stud_Course_Regd_tbl_Stud_Personal_Info">
+      <End Role="tbl_Stud_Personal_Info" EntitySet="tbl_Stud_Personal_Info" />
+      <End Role="tbl_Stud_Course_Regd" EntitySet="tbl_Stud_Course_Regd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Favourites_Vd_tbl_Course_Detail" Association="Self.FK_tbl_Stud_Favourites_Vd_tbl_Course_Detail">
+      <End Role="tbl_Course_Detail" EntitySet="tbl_Course_Detail" />
+      <End Role="tbl_Stud_Favourites_Vd" EntitySet="tbl_Stud_Favourites_Vd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Favourites_Vd_tbl_Course_Video" Association="Self.FK_tbl_Stud_Favourites_Vd_tbl_Course_Video">
+      <End Role="tbl_Course_Video" EntitySet="tbl_Course_Video" />
+      <End Role="tbl_Stud_Favourites_Vd" EntitySet="tbl_Stud_Favourites_Vd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Favourites_Vd_tbl_Login" Association="Self.FK_tbl_Stud_Favourites_Vd_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Stud_Favourites_Vd" EntitySet="tbl_Stud_Favourites_Vd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Favourites_Vd_tbl_Login1" Association="Self.FK_tbl_Stud_Favourites_Vd_tbl_Login1">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Stud_Favourites_Vd" EntitySet="tbl_Stud_Favourites_Vd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Favourites_Vd_tbl_Stud_Personal_Info" Association="Self.FK_tbl_Stud_Favourites_Vd_tbl_Stud_Personal_Info">
+      <End Role="tbl_Stud_Personal_Info" EntitySet="tbl_Stud_Personal_Info" />
+      <End Role="tbl_Stud_Favourites_Vd" EntitySet="tbl_Stud_Favourites_Vd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Job_Exp_Info_tbl_Login" Association="Self.FK_tbl_Stud_Job_Exp_Info_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Stud_Job_Exp_Info" EntitySet="tbl_Stud_Job_Exp_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Job_Exp_Info_tbl_Login2" Association="Self.FK_tbl_Stud_Job_Exp_Info_tbl_Login2">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Stud_Job_Exp_Info" EntitySet="tbl_Stud_Job_Exp_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Job_Exp_Info_tbl_Stud_Personal_Info1" Association="Self.FK_tbl_Stud_Job_Exp_Info_tbl_Stud_Personal_Info1">
+      <End Role="tbl_Stud_Personal_Info" EntitySet="tbl_Stud_Personal_Info" />
+      <End Role="tbl_Stud_Job_Exp_Info" EntitySet="tbl_Stud_Job_Exp_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Notes_tbl_Course_Detail" Association="Self.FK_tbl_Stud_Notes_tbl_Course_Detail">
+      <End Role="tbl_Course_Detail" EntitySet="tbl_Course_Detail" />
+      <End Role="tbl_Stud_Notes" EntitySet="tbl_Stud_Notes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Notes_tbl_Course_Video" Association="Self.FK_tbl_Stud_Notes_tbl_Course_Video">
+      <End Role="tbl_Course_Video" EntitySet="tbl_Course_Video" />
+      <End Role="tbl_Stud_Notes" EntitySet="tbl_Stud_Notes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Notes_tbl_Login" Association="Self.FK_tbl_Stud_Notes_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Stud_Notes" EntitySet="tbl_Stud_Notes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Notes_tbl_Login1" Association="Self.FK_tbl_Stud_Notes_tbl_Login1">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Stud_Notes" EntitySet="tbl_Stud_Notes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Notes_tbl_Stud_Personal_Info" Association="Self.FK_tbl_Stud_Notes_tbl_Stud_Personal_Info">
+      <End Role="tbl_Stud_Personal_Info" EntitySet="tbl_Stud_Personal_Info" />
+      <End Role="tbl_Stud_Notes" EntitySet="tbl_Stud_Notes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Personal_Info_tbl_Login" Association="Self.FK_tbl_Stud_Personal_Info_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Stud_Personal_Info" EntitySet="tbl_Stud_Personal_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Personal_Info_tbl_Login1" Association="Self.FK_tbl_Stud_Personal_Info_tbl_Login1">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Stud_Personal_Info" EntitySet="tbl_Stud_Personal_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Personal_Info_tbl_Login2" Association="Self.FK_tbl_Stud_Personal_Info_tbl_Login2">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Stud_Personal_Info" EntitySet="tbl_Stud_Personal_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Resume_tbl_Stud_Personal_Info" Association="Self.FK_tbl_Stud_Resume_tbl_Stud_Personal_Info">
+      <End Role="tbl_Stud_Personal_Info" EntitySet="tbl_Stud_Personal_Info" />
+      <End Role="tbl_Stud_Resume" EntitySet="tbl_Stud_Resume" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Resume_tbl_Stud_Personal_Info1" Association="Self.FK_tbl_Stud_Resume_tbl_Stud_Personal_Info1">
+      <End Role="tbl_Stud_Personal_Info" EntitySet="tbl_Stud_Personal_Info" />
+      <End Role="tbl_Stud_Resume" EntitySet="tbl_Stud_Resume" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Resume_tbl_Stud_Resume" Association="Self.FK_tbl_Stud_Resume_tbl_Stud_Resume">
+      <End Role="tbl_Stud_Personal_Info" EntitySet="tbl_Stud_Personal_Info" />
+      <End Role="tbl_Stud_Resume" EntitySet="tbl_Stud_Resume" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Skill_Set_tbl_Login" Association="Self.FK_tbl_Stud_Skill_Set_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Stud_Skill_Set" EntitySet="tbl_Stud_Skill_Set" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Skill_Set_tbl_Login1" Association="Self.FK_tbl_Stud_Skill_Set_tbl_Login1">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Stud_Skill_Set" EntitySet="tbl_Stud_Skill_Set" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Skill_Set_tbl_Stud_Personal_Info" Association="Self.FK_tbl_Stud_Skill_Set_tbl_Stud_Personal_Info">
+      <End Role="tbl_Stud_Personal_Info" EntitySet="tbl_Stud_Personal_Info" />
+      <End Role="tbl_Stud_Skill_Set" EntitySet="tbl_Stud_Skill_Set" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Skill_Set_tbl_Sub_Master" Association="Self.FK_tbl_Stud_Skill_Set_tbl_Sub_Master">
+      <End Role="tbl_Sub_Master" EntitySet="tbl_Sub_Master" />
+      <End Role="tbl_Stud_Skill_Set" EntitySet="tbl_Stud_Skill_Set" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Skill_Set_tbl_Sub_Master1" Association="Self.FK_tbl_Stud_Skill_Set_tbl_Sub_Master1">
+      <End Role="tbl_Sub_Master" EntitySet="tbl_Sub_Master" />
+      <End Role="tbl_Stud_Skill_Set" EntitySet="tbl_Stud_Skill_Set" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Viewed_Vd_tbl_Course_Video" Association="Self.FK_tbl_Stud_Viewed_Vd_tbl_Course_Video">
+      <End Role="tbl_Course_Video" EntitySet="tbl_Course_Video" />
+      <End Role="tbl_Stud_Viewed_Vd" EntitySet="tbl_Stud_Viewed_Vd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Viewed_Vd_tbl_Login" Association="Self.FK_tbl_Stud_Viewed_Vd_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Stud_Viewed_Vd" EntitySet="tbl_Stud_Viewed_Vd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Viewed_Vd_tbl_Login1" Association="Self.FK_tbl_Stud_Viewed_Vd_tbl_Login1">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Stud_Viewed_Vd" EntitySet="tbl_Stud_Viewed_Vd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Stud_Viewed_Vd_tbl_Stud_Personal_Info1" Association="Self.FK_tbl_Stud_Viewed_Vd_tbl_Stud_Personal_Info1">
+      <End Role="tbl_Stud_Personal_Info" EntitySet="tbl_Stud_Personal_Info" />
+      <End Role="tbl_Stud_Viewed_Vd" EntitySet="tbl_Stud_Viewed_Vd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Sub_Master_tbl_Login" Association="Self.FK_tbl_Sub_Master_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Sub_Master" EntitySet="tbl_Sub_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Sub_Master_tbl_Login1" Association="Self.FK_tbl_Sub_Master_tbl_Login1">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Sub_Master" EntitySet="tbl_Sub_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Sub_Master_tbl_Master" Association="Self.FK_tbl_Sub_Master_tbl_Master">
+      <End Role="tbl_Master" EntitySet="tbl_Master" />
+      <End Role="tbl_Sub_Master" EntitySet="tbl_Sub_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Assignment_Master_tbl_Course_Detail" Association="Self.FK_tbl_Trnr_Assignment_Master_tbl_Course_Detail">
+      <End Role="tbl_Course_Detail" EntitySet="tbl_Course_Detail" />
+      <End Role="tbl_Trnr_Assignment_Master" EntitySet="tbl_Trnr_Assignment_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Assignment_Master_tbl_Login" Association="Self.FK_tbl_Trnr_Assignment_Master_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Trnr_Assignment_Master" EntitySet="tbl_Trnr_Assignment_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Assignment_Master_tbl_Login1" Association="Self.FK_tbl_Trnr_Assignment_Master_tbl_Login1">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Trnr_Assignment_Master" EntitySet="tbl_Trnr_Assignment_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Assignment_Master_tbl_Stud_Personal_Info" Association="Self.FK_tbl_Trnr_Assignment_Master_tbl_Stud_Personal_Info">
+      <End Role="tbl_Stud_Personal_Info" EntitySet="tbl_Stud_Personal_Info" />
+      <End Role="tbl_Trnr_Assignment_Master" EntitySet="tbl_Trnr_Assignment_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Assignment_Master_tbl_Sub_Master" Association="Self.FK_tbl_Trnr_Assignment_Master_tbl_Sub_Master">
+      <End Role="tbl_Sub_Master" EntitySet="tbl_Sub_Master" />
+      <End Role="tbl_Trnr_Assignment_Master" EntitySet="tbl_Trnr_Assignment_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Assignment_Questions_tbl_Login" Association="Self.FK_tbl_Trnr_Assignment_Questions_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Trnr_Assignment_Questions" EntitySet="tbl_Trnr_Assignment_Questions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Assignment_Questions_tbl_Login1" Association="Self.FK_tbl_Trnr_Assignment_Questions_tbl_Login1">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Trnr_Assignment_Questions" EntitySet="tbl_Trnr_Assignment_Questions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Assignment_Questions_tbl_Sub_Master" Association="Self.FK_tbl_Trnr_Assignment_Questions_tbl_Sub_Master">
+      <End Role="tbl_Sub_Master" EntitySet="tbl_Sub_Master" />
+      <End Role="tbl_Trnr_Assignment_Questions" EntitySet="tbl_Trnr_Assignment_Questions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Assignment_Questions_tbl_Trnr_Assignment_Master" Association="Self.FK_tbl_Trnr_Assignment_Questions_tbl_Trnr_Assignment_Master">
+      <End Role="tbl_Trnr_Assignment_Master" EntitySet="tbl_Trnr_Assignment_Master" />
+      <End Role="tbl_Trnr_Assignment_Questions" EntitySet="tbl_Trnr_Assignment_Questions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Job_Exp_Info_tbl_Login" Association="Self.FK_tbl_Trnr_Job_Exp_Info_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Trnr_Job_Exp_Info" EntitySet="tbl_Trnr_Job_Exp_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Job_Exp_Info_tbl_Login1" Association="Self.FK_tbl_Trnr_Job_Exp_Info_tbl_Login1">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Trnr_Job_Exp_Info" EntitySet="tbl_Trnr_Job_Exp_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Job_Exp_Info_tbl_Trnr_Personal_Info" Association="Self.FK_tbl_Trnr_Job_Exp_Info_tbl_Trnr_Personal_Info">
+      <End Role="tbl_Trnr_Personal_Info" EntitySet="tbl_Trnr_Personal_Info" />
+      <End Role="tbl_Trnr_Job_Exp_Info" EntitySet="tbl_Trnr_Job_Exp_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Personal_Info_tbl_Login" Association="Self.FK_tbl_Trnr_Personal_Info_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Trnr_Personal_Info" EntitySet="tbl_Trnr_Personal_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Personal_Info_tbl_Login1" Association="Self.FK_tbl_Trnr_Personal_Info_tbl_Login1">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Trnr_Personal_Info" EntitySet="tbl_Trnr_Personal_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Personal_Info_tbl_Login2" Association="Self.FK_tbl_Trnr_Personal_Info_tbl_Login2">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Trnr_Personal_Info" EntitySet="tbl_Trnr_Personal_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Personal_Info_tbl_Sub_Master" Association="Self.FK_tbl_Trnr_Personal_Info_tbl_Sub_Master">
+      <End Role="tbl_Sub_Master" EntitySet="tbl_Sub_Master" />
+      <End Role="tbl_Trnr_Personal_Info" EntitySet="tbl_Trnr_Personal_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Personal_Info_tbl_Sub_Master1" Association="Self.FK_tbl_Trnr_Personal_Info_tbl_Sub_Master1">
+      <End Role="tbl_Sub_Master" EntitySet="tbl_Sub_Master" />
+      <End Role="tbl_Trnr_Personal_Info" EntitySet="tbl_Trnr_Personal_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Personal_Info_tbl_Sub_Master2" Association="Self.FK_tbl_Trnr_Personal_Info_tbl_Sub_Master2">
+      <End Role="tbl_Sub_Master" EntitySet="tbl_Sub_Master" />
+      <End Role="tbl_Trnr_Personal_Info" EntitySet="tbl_Trnr_Personal_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Skill_Set_tbl_Login" Association="Self.FK_tbl_Trnr_Skill_Set_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Trnr_Skill_Set" EntitySet="tbl_Trnr_Skill_Set" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Skill_Set_tbl_Login1" Association="Self.FK_tbl_Trnr_Skill_Set_tbl_Login1">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Trnr_Skill_Set" EntitySet="tbl_Trnr_Skill_Set" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Skill_Set_tbl_Sub_Master" Association="Self.FK_tbl_Trnr_Skill_Set_tbl_Sub_Master">
+      <End Role="tbl_Sub_Master" EntitySet="tbl_Sub_Master" />
+      <End Role="tbl_Trnr_Skill_Set" EntitySet="tbl_Trnr_Skill_Set" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Skill_Set_tbl_Trnr_Personal_Info" Association="Self.FK_tbl_Trnr_Skill_Set_tbl_Trnr_Personal_Info">
+      <End Role="tbl_Trnr_Personal_Info" EntitySet="tbl_Trnr_Personal_Info" />
+      <End Role="tbl_Trnr_Skill_Set" EntitySet="tbl_Trnr_Skill_Set" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Video_Upload_tbl_Course_Detail" Association="Self.FK_tbl_Trnr_Video_Upload_tbl_Course_Detail">
+      <End Role="tbl_Course_Detail" EntitySet="tbl_Course_Detail" />
+      <End Role="tbl_Trnr_Video_Upload" EntitySet="tbl_Trnr_Video_Upload" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Video_Upload_tbl_Course_Video" Association="Self.FK_tbl_Trnr_Video_Upload_tbl_Course_Video">
+      <End Role="tbl_Course_Video" EntitySet="tbl_Course_Video" />
+      <End Role="tbl_Trnr_Video_Upload" EntitySet="tbl_Trnr_Video_Upload" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Video_Upload_tbl_Login" Association="Self.FK_tbl_Trnr_Video_Upload_tbl_Login">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Trnr_Video_Upload" EntitySet="tbl_Trnr_Video_Upload" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Video_Upload_tbl_Login1" Association="Self.FK_tbl_Trnr_Video_Upload_tbl_Login1">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Trnr_Video_Upload" EntitySet="tbl_Trnr_Video_Upload" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Video_Upload_tbl_Login2" Association="Self.FK_tbl_Trnr_Video_Upload_tbl_Login2">
+      <End Role="tbl_Login" EntitySet="tbl_Login" />
+      <End Role="tbl_Trnr_Video_Upload" EntitySet="tbl_Trnr_Video_Upload" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Trnr_Video_Upload_tbl_Sub_Master" Association="Self.FK_tbl_Trnr_Video_Upload_tbl_Sub_Master">
+      <End Role="tbl_Sub_Master" EntitySet="tbl_Sub_Master" />
+      <End Role="tbl_Trnr_Video_Upload" EntitySet="tbl_Trnr_Video_Upload" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

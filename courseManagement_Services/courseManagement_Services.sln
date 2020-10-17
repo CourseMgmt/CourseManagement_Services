@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "courseManagement_Services", "courseManagement_Services.csproj", "{85C02A26-D341-424D-B851-1B87E989F4F1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2331E46C-3481-415F-B1DC-03381DBF29A4} = {2331E46C-3481-415F-B1DC-03381DBF29A4}
+		{32E563B4-0389-4F5A-8CA1-733978ADE3A6} = {32E563B4-0389-4F5A-8CA1-733978ADE3A6}
+		{07F255C4-F683-4E46-9C77-906D3E7B35A9} = {07F255C4-F683-4E46-9C77-906D3E7B35A9}
+		{15FD9FFB-7D5A-435D-A200-C9A7D353D997} = {15FD9FFB-7D5A-435D-A200-C9A7D353D997}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "courseManagement_DBLayer", "..\courseManagement_DBLayer\courseManagement_DBLayer.csproj", "{31CACBA8-0433-49A9-901B-EEB84E23EF99}"
+	ProjectSection(ProjectDependencies) = postProject
+		{32E563B4-0389-4F5A-8CA1-733978ADE3A6} = {32E563B4-0389-4F5A-8CA1-733978ADE3A6}
+		{15FD9FFB-7D5A-435D-A200-C9A7D353D997} = {15FD9FFB-7D5A-435D-A200-C9A7D353D997}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "courseManagement_Common", "..\courseManagement_Common\courseManagement_Common.csproj", "{07F255C4-F683-4E46-9C77-906D3E7B35A9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{32E563B4-0389-4F5A-8CA1-733978ADE3A6} = {32E563B4-0389-4F5A-8CA1-733978ADE3A6}
+		{15FD9FFB-7D5A-435D-A200-C9A7D353D997} = {15FD9FFB-7D5A-435D-A200-C9A7D353D997}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "courseManagement_BusinessLayer", "..\courseManagement_BusinessLayer\courseManagement_BusinessLayer.csproj", "{2331E46C-3481-415F-B1DC-03381DBF29A4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{31CACBA8-0433-49A9-901B-EEB84E23EF99} = {31CACBA8-0433-49A9-901B-EEB84E23EF99}
+		{32E563B4-0389-4F5A-8CA1-733978ADE3A6} = {32E563B4-0389-4F5A-8CA1-733978ADE3A6}
+		{07F255C4-F683-4E46-9C77-906D3E7B35A9} = {07F255C4-F683-4E46-9C77-906D3E7B35A9}
+		{15FD9FFB-7D5A-435D-A200-C9A7D353D997} = {15FD9FFB-7D5A-435D-A200-C9A7D353D997}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "courseManagement_ServiceModel", "..\courseManagement_ServiceModel\courseManagement_ServiceModel.csproj", "{15FD9FFB-7D5A-435D-A200-C9A7D353D997}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "courseManagement_Logs", "..\courseManagement_Logs\courseManagement_Logs.csproj", "{32E563B4-0389-4F5A-8CA1-733978ADE3A6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{15FD9FFB-7D5A-435D-A200-C9A7D353D997} = {15FD9FFB-7D5A-435D-A200-C9A7D353D997}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85C02A26-D341-424D-B851-1B87E989F4F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85C02A26-D341-424D-B851-1B87E989F4F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85C02A26-D341-424D-B851-1B87E989F4F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85C02A26-D341-424D-B851-1B87E989F4F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31CACBA8-0433-49A9-901B-EEB84E23EF99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31CACBA8-0433-49A9-901B-EEB84E23EF99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31CACBA8-0433-49A9-901B-EEB84E23EF99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31CACBA8-0433-49A9-901B-EEB84E23EF99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07F255C4-F683-4E46-9C77-906D3E7B35A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07F255C4-F683-4E46-9C77-906D3E7B35A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07F255C4-F683-4E46-9C77-906D3E7B35A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07F255C4-F683-4E46-9C77-906D3E7B35A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2331E46C-3481-415F-B1DC-03381DBF29A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2331E46C-3481-415F-B1DC-03381DBF29A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2331E46C-3481-415F-B1DC-03381DBF29A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2331E46C-3481-415F-B1DC-03381DBF29A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15FD9FFB-7D5A-435D-A200-C9A7D353D997}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15FD9FFB-7D5A-435D-A200-C9A7D353D997}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15FD9FFB-7D5A-435D-A200-C9A7D353D997}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15FD9FFB-7D5A-435D-A200-C9A7D353D997}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32E563B4-0389-4F5A-8CA1-733978ADE3A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32E563B4-0389-4F5A-8CA1-733978ADE3A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32E563B4-0389-4F5A-8CA1-733978ADE3A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32E563B4-0389-4F5A-8CA1-733978ADE3A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8214A921-89C3-4720-B0D8-C188BC92429F}
+	EndGlobalSection
+EndGlobal

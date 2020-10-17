@@ -1,0 +1,6 @@
+E:\Project Files\Course Management\Course Management Services\courseManagement_ServiceModel\bin\Debug\courseManagement_ServiceModel.dll
+E:\Project Files\Course Management\Course Management Services\courseManagement_ServiceModel\bin\Debug\courseManagement_ServiceModel.pdb
+E:\Project Files\Course Management\Course Management Services\courseManagement_ServiceModel\obj\Debug\courseManagement_ServiceModel.csprojAssemblyReference.cache
+E:\Project Files\Course Management\Course Management Services\courseManagement_ServiceModel\obj\Debug\courseManagement_ServiceModel.csproj.CoreCompileInputs.cache
+E:\Project Files\Course Management\Course Management Services\courseManagement_ServiceModel\obj\Debug\courseManagement_ServiceModel.dll
+E:\Project Files\Course Management\Course Management Services\courseManagement_ServiceModel\obj\Debug\courseManagement_ServiceModel.pdb
